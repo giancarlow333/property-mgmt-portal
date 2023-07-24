@@ -6,10 +6,15 @@
     --lightest: #E0EFED;
     --dark: #176056;
     --darker: #05443B;
+    --darkest: #002C26;
 }
 
 * {
     font-family: Comfortaa;
+}
+
+body {
+    background-color: var(--lightest);
 }
 
 header,
@@ -45,4 +50,29 @@ footer ul {
     justify-content: space-between;
     list-style-type: none;
     padding: 15px;
+}
+
+main {
+    color: var(--darkest);
+}
+
+article {
+    background-color: var(--darker);
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.section-header {
+    background-color: var(--lighter);
+    width: 33%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.section-contents {
+    background-color: var(--lighter);
+    width: 67%;
+    margin: 10px;
+    padding: 10px;
 }
