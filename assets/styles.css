@@ -12,6 +12,10 @@
     font-family: Comfortaa;
 }
 
+body {
+    background-color: var(--lightest);
+}
+
 header,
 footer {
     color: var(--lightest);
@@ -45,4 +49,8 @@ footer ul {
     justify-content: space-between;
     list-style-type: none;
     padding: 15px;
+}
+
+main {
+    color: var(--darker);
 }
