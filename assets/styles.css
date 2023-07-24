@@ -6,6 +6,7 @@
     --lightest: #E0EFED;
     --dark: #176056;
     --darker: #05443B;
+    --darkest: #002C26;
 }
 
 * {
@@ -52,5 +53,22 @@ footer ul {
 }
 
 main {
-    color: var(--darker);
+    color: var(--darkest);
+}
+
+article {
+    background-color: var(--darker);
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.section-header {
+    background-color: var(--lighter);
+    width: 33%;
+}
+
+.section-contents {
+    background-color: var(--lighter);
+    width: 67%;
 }
