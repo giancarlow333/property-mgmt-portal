@@ -1,0 +1,48 @@
+/* Color scheme */
+:root {
+    --base-color: #2E776D;
+    --light: #509188;
+    --lighter: #7FB2AB;
+    --lightest: #E0EFED;
+    --dark: #176056;
+    --darker: #05443B;
+}
+
+* {
+    font-family: Comfortaa;
+}
+
+header,
+footer {
+    color: var(--lightest);
+    background-color: var(--base-color);
+    text-align: center;
+}
+
+header h1 {
+    padding: 15px;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0px 15px 15px 15px;
+}
+
+.header-img {
+    background-image: url(./image4.png);
+    height: 250px;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 15px;
+}
