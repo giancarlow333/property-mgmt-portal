@@ -55,13 +55,13 @@ footer ul {
 main {
     color: var(--darkest);
 }
-
+/*
 article {
     background-color: var(--darker);
     margin: 15px;
     display: flex;
     justify-content: space-around;
-}
+}*/
 
 .section-header {
     background-color: var(--lighter);
