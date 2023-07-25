@@ -1,0 +1,12 @@
+
+
+.header-img {
+    background-image: url(./image4.png);
+    height: 250px;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
