@@ -17,6 +17,16 @@ body {
     background-color: var(--lightest);
 }
 
+a:link {
+    color: var(--lightest);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--lightest);
+    text-decoration: none;
+}
+
 header,
 footer {
     color: var(--lightest);
