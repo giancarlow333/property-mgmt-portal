@@ -15,12 +15,8 @@
         <header class="bg-emerald-700 text-emerald-50">
             <h1 class="text-3xl"><a href="./index.html">TAS Property Management Portal</a></h1>
             <div class="header-img"></div>
-            <ul class="list-none flex flex-col md:flex-row">
-                <li><a href="./index1.html">Reimbursement Submission</a></li>
-                <li><a href="./index2.html">Service Search</a></li>
-                <li><a href="./index3.html">Tenant Rules/Disclosures</a></li>
-                <li><a href="./index4.html">Our Properties/Contact Us</a></li>
-            </ul>
+            <div id="nav"></div>
+            <!-- code source https://stackoverflow.com/questions/15320801/how-to-include-an-html-file-with-jquery -->
         </header>
         <main class="container">
             <!-- TESTIMONIALS -->
@@ -44,5 +40,11 @@
                 <li>Hours</li>
             </ul>
         </footer>
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                $("#nav").load("./assets/navbar.html")
+            });
+        </script>
     </body>
 </html>
