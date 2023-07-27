@@ -10,3 +10,70 @@
     background-position: center;
 }
 
+.header {
+    justify-content: center;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form {
+    margin: 15px;
+}
+
+input, select, option, optgroup, textarea, button,
+pre, code {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+
+form {
+    max-width: 400px;
+  }
+  
+  form h3 {
+    font-size: 150%;
+  }
+  
+  form p {
+    margin: 3% 0;
+  }
+  
+  label {
+    display: block;
+  }
+  
+  button {
+    padding: 1% 2%;
+    color: #fff;
+    background-color: #13293d;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  /* What does this CSS rule do? do not want webrowser to apply extra elements*/
+  electelect {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("../images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
+  
+  .text-input {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .text-input, select {
+    padding: 1%;
+    outline: none;
+    border: 1.2px solid #b9C6ae;
