@@ -3,25 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Yelp Service Search</title>
+        <title>Repair/Reimbursement Submission</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./assets/styles.css" />
-        <link rel="stylesheet" href="./assets/styles2.css" />
+        <link rel="stylesheet" href="./assets/styles1.css" />
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="./assets/script2.js"></script>
     </head>
-    <body>
+    <body data-page="reimbursement">
         <header class="bg-emerald-700 text-emerald-50">
             <h1 class="text-3xl"><a href="./index.html">TAS Property Management Portal</a></h1>
             <div class="header-img"></div>
-            <ul class="list-none flex flex-col md:flex-row">
-                <li><a href="./index1.html">Reimbursement Submission</a></li>
-                <li><a href="./index2.html">Service Search</a></li>
-                <li><a href="./index3.html">Tenant Rules/Disclosures</a></li>
-                <li><a href="./index4.html">Our Properties/Contact Us</a></li>
-            </ul>
+            <nav id="nav"></nav>
         </header>
         <main class="container">
             <!-- TESTIMONIALS -->
@@ -45,5 +39,12 @@
                 <li>Hours</li>
             </ul>
         </footer>
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                $("#nav").load("./assets/navbar.html")
+            });
+        </script>
+        <script src="./assets/script.js"></script>
     </body>
 </html>

@@ -9,13 +9,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./assets/styles.css" />
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="./assets/script.js"></script>
+        
     </head>
-    <body>
+    <body id="body" data-page="home">
         <header class="bg-emerald-700 text-emerald-50">
             <h1 class="text-3xl"><a href="./index.html">TAS Property Management Portal</a></h1>
             <div class="header-img"></div>
-            <div id="nav"></div>
+            <nav id="nav"></nav>
             <!-- code source https://stackoverflow.com/questions/15320801/how-to-include-an-html-file-with-jquery -->
         </header>
         <main class="container">
@@ -46,5 +46,6 @@
                 $("#nav").load("./assets/navbar.html")
             });
         </script>
+        <script src="./assets/script.js"></script>
     </body>
 </html>
