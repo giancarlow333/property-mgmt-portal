@@ -19,16 +19,84 @@
         </header>
         <main class="container">
             <!-- TESTIMONIALS -->
-            <article class="flex flex-row border-solid border-2 border-emerald-700 m-4 text-emerald-900">
-                <section class="container mx-auto p-4">Testimonials</section>
-                <section class="container mx-auto p-4">
-                    <q>Omg - they are so amazing - great time living here over the last two years.</q> - Tenant from 2b
-                </section>
-            </article>
-            
+            <section>
+                <article>
+                    <h1 class="header">Reimbursement/Service Repair Request</h1>
+                    <div>
+                    </div>
+                    <form>
+                        <h3>Please Enter Your Service Details</h3>
+                        <p>
+                            <label for="username">Name:</label>
+                            <input class="text-input" id="username" type="text" placeholder="First Last" />
+                        </p>
+                        <p>
+                            <label for="phone">Name:</label>
+                            <input class="text-input" id="phone" type="number" placeholder="XXX-XXX-XXXX" />
+                        </p>
+                        <p>
+                            <label for="email">E-mail:</label>
+                            <input class="text-input" id="email" type="text" placeholder="me@example.com" />
+                        </p>
+                        <p class="flex-row">
+                            <label for="property">Property</label>
+                            <select id="property">
+                                <option>Property 1</option>
+                                <option>Property 2</option>
+                                <option>Property 3</option>
+                                <option>Property 4</option>
+                            </select>
+                        </p>
+                        <p class="flex-row">
+                            <label for="issue-type">Issue Type</label>
+                            <select id="issue-type">
+                                <option>Reimbursement</option>
+                                <option>Plumbing</option>
+                                <option>Electrical</option>
+                                <option>Other Issue</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="description">Describe Your Issue:</label>
+                            <textarea class="text-input" id="description"
+                                placeholder="I have a plumbing emergency!"></textarea>
+                        </p>
+                        <div>
+                            <label for="urgency" class="pContact">Emergency?</label>
+                            <p class="flex-row">
+                                <input class="checkbox" id="eYes" type="checkbox" />
+                                <label for="emergency">Yes</label>
+                            </p>
+                            <p class="flex-row">
+                                <input class="checkbox" id="eNo" type="checkbox" />
+                                <label for="emergency">No</label>
+                            </p>
+                        </div>
+                        <div>
+                            <label for="description" class="pContact">Preferred Contact Method</label>
+                            <p class="flex-row">
+                                <input class="checkbox" id="cPhone" type="checkbox" />
+                                <label for="method">Phone</label>
+                            </p>
+                            <p class="flex-row">
+                                <input class="checkbox" id="cText" type="checkbox" />
+                                <label for="method">Test</label>
+                            </p>
+                            <p class="flex-row">
+                                <input class="checkbox" id="cEmail" type="checkbox" />
+                                <label for="method">Email</label>
+                            </p>
+                        </div>
+                        <p>
+                            <button id="button">Submit</button>
+                        </p>
+                    </form>
+                </article>
+            </section>
+    
             <!-- COMMUNITY EVENTS -->
             <article>
-
+    
             </article>
         </main>
         <footer class="bg-emerald-700 text-emerald-50">
