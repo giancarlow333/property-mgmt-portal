@@ -1,5 +1,5 @@
-# stunning-octo-fortnight
+# Property Management Portal Demo
 
-I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming.
+## Sources
 
-What fresh hell is this.
+* The code for including HTML from a separte file via jQuery came from [this StackOverflow thread](https://stackoverflow.com/questions/15320801/how-to-include-an-html-file-with-jquery), via a user named [Boaz](https://stackoverflow.com/users/1889273/boaz).
