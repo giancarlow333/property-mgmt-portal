@@ -59,7 +59,7 @@ $(function () {
       searchTerm = "electrician";
     }
 
-    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\"&callback=displayResults";
+    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\""; //&callback=displayResults";
     $("#search-results").text(requestURL);
   });
   // run the search
