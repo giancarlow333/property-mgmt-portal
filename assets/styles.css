@@ -1,4 +1,4 @@
-/* Color scheme - Linked to Home Page */
+/* Color scheme */
 :root {
     --base-color: #2E776D;
     --light: #509188;
@@ -73,6 +73,34 @@ article {
     justify-content: space-around;
 }*/
 
+
+.testimonial {
+    display: flex;
+
+}
+
+.photo {
+    width: 20%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.text {
+    width: 80%;
+}
+
+.timage {
+object-fit: cover;
+width: 80%;
+height: 70%;
+
+}
+
+.name {
+    margin-top: 3%;
+    margin-left: 55%
+}
 .section-header {
     background-color: var(--lighter);
     width: 33%;
