@@ -26,7 +26,7 @@ fetch(requestURL)
 
 // https://developers.google.com/custom-search/v1/using_rest
 function displayResults(response) {
-  for (var i = 0; i < 2; i++) {
+  for (var i = 0; i < response.items.length; i++) {
     var item = response.items[i];
     document.getElementById("search-results").append(
       document.createElement("br"),
