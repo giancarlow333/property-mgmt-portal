@@ -76,16 +76,31 @@ article {
 
 .testimonial {
     display: flex;
+
 }
 
-.name {
-    width: 30%;
+.photo {
+    width: 20%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
 }
 
 .text {
-    width: 65%;
+    width: 80%;
 }
 
+.timage {
+object-fit: cover;
+width: 80%;
+height: 70%;
+
+}
+
+.name {
+    margin-top: 3%;
+    margin-left: 55%
+}
 .section-header {
     background-color: var(--lighter);
     width: 33%;
