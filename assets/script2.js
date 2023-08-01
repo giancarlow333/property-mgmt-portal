@@ -43,8 +43,39 @@ $(function () {
   // add listener to button
   btnElt.on("click", function(event) {
     event.preventDefault();
+    //https://stackoverflow.com/questions/10659097/jquery-get-selected-option-from-dropdown
     var propertyID = $("#property").find(":selected").val();
     var serviceID = $("#issue-type").find(":selected").val();
     $("#search-results").text(propertyID);
+
+    // set search location based on selection
+    if (propertyID == "The Custom - Luxury Suites") {
+      searchLocation = "2424 77th Street Los Angeles, CA 90247";
+    }
+    else if (propertyID == "JW Lofts") {
+      searchLocation = "7117 Sepulveda Ave. Los Angeles, CA 90247";
+    }
+    else if (propertyID == "The Giancarlo") {
+      searchLocation = "4242 Robinson Way Los Angeles, CA 90042";
+    }
+    else if (propertyID == "Crystal Lake Apartments") {
+      searchLocation = "1313 Elm Street Los Angeles, CA 90066";
+    }
+
+    // set search term based on selection
+    if (serviceID == "Plumbing") {
+      searchTerm = "plumber";
+    }
+    else if (serviceID == "Electrical") {
+      searchTerm = "electrician";
+    }
+
+    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + "%20AND%20" + searchLocation + "&callback=displayResults\"";
+    $("#search-results").text(requestURL);
+    
+    // run the search
+    fetch(requestURL).then(function (response) {
+      displayResults(response);
+    });
   });
 });
