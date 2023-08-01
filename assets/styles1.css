@@ -1,4 +1,4 @@
-/* Color scheme */
+/* Color scheme - Linked to Repair/Reinbursement Page */
 
 .header-img {
     background-image: url(./image4.png);
@@ -87,8 +87,26 @@ ol, ul {
     outline: none;
     border: 1.2px solid #b9C6ae;
   }
-  
+
     .body {
       text-align: center;
       display:flexbox
     }
+
+button {
+  border: 3px outset var(--base-color);
+  padding: 20px 20px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+
+}
+
+#emergencyanswers {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+}
+

@@ -1,4 +1,4 @@
-/* Color scheme */
+/* Color scheme - Linked to Home Page */
 :root {
     --base-color: #2E776D;
     --light: #509188;
@@ -85,4 +85,18 @@ article {
     width: 67%;
     margin: 10px;
     padding: 10px;
+}
+
+button {
+    border: 6px solid #000;
+    padding: 20px 40px;
+    text-align: center;
+    display: inline-block;
+}
+
+#eNo, #eYes {
+    list-style:none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
