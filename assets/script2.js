@@ -7,7 +7,7 @@ const searchEngineID = "54f51fe0be357423e";
 var searchLocation = "350%205th%20Ave,%20New%20York,%20NY%2010118";
 var searchTerm = "plumber";
 
-var requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + "%20AND%20" + searchLocation + "&callback=displayResults\"";
+var requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + "%20AND%20" + searchLocation;
 
 
 // https://stackoverflow.com/questions/25515936/perform-curl-request-in-javascript
@@ -65,11 +65,13 @@ $(function () {
     
     // run the search
     fetch(requestURL).then(function (response) {
-      $.each(response.items, function() {
-        $("#search-results").append(
-          $(this)
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        document.getElementById("search-results").append(
+          document.createElement("br"),
+          document.createTextNode(item.htmlTitle)
         );
-      });
+      }
     });
   });
 });
