@@ -1,3 +1,5 @@
+/*linked to styles1css */
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,10 +43,10 @@
                         <p class="flex-row">
                             <label for="property">Property</label>
                             <select id="property">
-                                <option>Property 1</option>
-                                <option>Property 2</option>
-                                <option>Property 3</option>
-                                <option>Property 4</option>
+                                <option>The Custom - Luxury Suites</option>
+                                <option>Jw Lofts</option>
+                                <option>The Giancarlo</option>
+                                <option>Crystal Lake Apartments</option>
                             </select>
                         </p>
                         <p class="flex-row">
@@ -53,6 +55,7 @@
                                 <option>Reimbursement</option>
                                 <option>Plumbing</option>
                                 <option>Electrical</option>
+                                <option>Complaint</option>
                                 <option>Other Issue</option>
                             </select>
                         </p>
@@ -62,18 +65,22 @@
                                 placeholder="I have a plumbing emergency!"></textarea>
                         </p>
                         <div>
-                            <label for="urgency" class="pContact">Emergency?</label>
-                            <p class="flex-row">
-                                <input class="checkbox" id="eYes" type="checkbox" />
+                            <label for="urgency" class="pContact"><strong>Is this an Emergancy?</strong></label>
+                         
+                            <p class="flex-row" id="emergencyanswers">
+                                <div>
+                                <input class="checkbox" id="eYes" type="checkbox"/>
                                 <label for="emergency">Yes</label>
-                            </p>
-                            <p class="flex-row">
-                                <input class="checkbox" id="eNo" type="checkbox" />
+                                </div>
+                                <p>
+                                </p>
+                               <div> <input class="checkbox" id="eNo" type="checkbox" />
                                 <label for="emergency">No</label>
+                               </div>
                             </p>
                         </div>
                         <div>
-                            <label for="description" class="pContact">Preferred Contact Method</label>
+                            <label for="description" class="pContact"><strong>Contact Method</strong></label>
                             <p class="flex-row">
                                 <input class="checkbox" id="cPhone" type="checkbox" />
                                 <label for="method">Phone</label>
