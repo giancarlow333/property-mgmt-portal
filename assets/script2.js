@@ -3,11 +3,9 @@
 const APIKey = "AIzaSyBpzAJtDlPPG6C2l0fUZM558KSRGdIRbT8";
 const baseURL = "https://customsearch.googleapis.com/customsearch/v1?";
 const searchEngineID = "54f51fe0be357423e";
-
-var searchLocation = "350%205th%20Ave,%20New%20York,%20NY%2010118";
-var searchTerm = "plumber";
-
-var requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + "%20AND%20" + searchLocation;
+var searchLocation;
+var searchTerm;
+var requestURL;
 
 
 // https://stackoverflow.com/questions/25515936/perform-curl-request-in-javascript
@@ -70,11 +68,10 @@ $(async function () {
       searchTerm = "electrician";
     }
 
-    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + "%20AND%20" + searchLocation + "&callback=displayResults\"";
+    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\"&callback=displayResults";
     $("#search-results").text(requestURL);
-    
-    // run the search
-    await fetch(requestURL).then(response => displayResults (response));
   });
+  // run the search
+  await fetch(requestURL).then(response => displayResults (response.json()));
 });
 
