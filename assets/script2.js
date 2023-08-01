@@ -65,13 +65,11 @@ $(function () {
     
     // run the search
     fetch(requestURL).then(function (response) {
-      for (var i = 0; i < response.items.length; i++) {
-        var item = response.items[i];
-        document.getElementById("search-results").append(
-          document.createElement("br"),
-          document.createTextNode(item.htmlTitle)
-        );
-      }
+      response.json().then(function() {
+        $.each(response.items, function() {
+          $("#search-results").append($(this).text(), "<br>");
+        });
+      });
     });
   });
 });
