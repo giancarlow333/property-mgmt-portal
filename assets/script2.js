@@ -39,7 +39,7 @@ $(async function () {
   var btnElt = $("#button");
 
   // add listener to button
-  btnElt.on("click", async function(event) {
+  btnElt.on("click", function(event) {
     event.preventDefault();
     //https://stackoverflow.com/questions/10659097/jquery-get-selected-option-from-dropdown
     var propertyID = $("#property").find(":selected").val();
@@ -68,7 +68,7 @@ $(async function () {
       searchTerm = "electrician";
     }
 
-    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\"&callback=displayResults";
+    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\"";
     $("#search-results").text(requestURL);
   });
   // run the search
