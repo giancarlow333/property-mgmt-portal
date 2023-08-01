@@ -12,7 +12,7 @@ var requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" +
 
 // https://stackoverflow.com/questions/25515936/perform-curl-request-in-javascript
 // by user https://stackoverflow.com/users/1244127/json-c11
-fetch(requestURL)
+/*fetch(requestURL)
   .then(function (response) {
     response.json().then(function(data) {
       console.log(data);
@@ -24,16 +24,7 @@ fetch(requestURL)
 <div class="gcse-search"></div>
 */
 
-// https://developers.google.com/custom-search/v1/using_rest
-function displayResults(response) {
-  for (var i = 0; i < response.items.length; i++) {
-    var item = response.items[i];
-    document.getElementById("search-results").append(
-      document.createElement("br"),
-      document.createTextNode(item.htmlTitle)
-    );
-  }
-}
+
 
 // Run script when button is clicked
 $(function () {
@@ -46,20 +37,19 @@ $(function () {
     //https://stackoverflow.com/questions/10659097/jquery-get-selected-option-from-dropdown
     var propertyID = $("#property").find(":selected").val();
     var serviceID = $("#issue-type").find(":selected").val();
-    $("#search-results").text(propertyID);
 
     // set search location based on selection
     if (propertyID == "The Custom - Luxury Suites") {
-      searchLocation = "2424 77th Street Los Angeles, CA 90247";
+      searchLocation = "2424%2077th%20Street%20Los%20Angeles,%20CA%2090247";
     }
     else if (propertyID == "JW Lofts") {
-      searchLocation = "7117 Sepulveda Ave. Los Angeles, CA 90247";
+      searchLocation = "7117%20Sepulveda%20Ave.%20Los%20Angeles,%20CA%2090247";
     }
     else if (propertyID == "The Giancarlo") {
-      searchLocation = "4242 Robinson Way Los Angeles, CA 90042";
+      searchLocation = "4242%20Robinson%20Way%20Los%20Angeles,%20CA%2090042";
     }
     else if (propertyID == "Crystal Lake Apartments") {
-      searchLocation = "1313 Elm Street Los Angeles, CA 90066";
+      searchLocation = "1313%20Elm%20Street%20Los%20Angeles,%20CA%2090066";
     }
 
     // set search term based on selection
@@ -71,11 +61,26 @@ $(function () {
     }
 
     requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + "%20AND%20" + searchLocation + "&callback=displayResults\"";
-    $("#search-results").text(requestURL);
+    //$("#search-results").text(requestURL);
     
     // run the search
     fetch(requestURL).then(function (response) {
-      displayResults(response);
+      $.each(response.items, function() {
+        $("#search-results").append(
+          $(this)
+        );
+      });
     });
   });
 });
+
+// https://developers.google.com/custom-search/v1/using_rest
+/*function displayResults(response) {
+  for (var i = 0; i < response.items.length; i++) {
+    var item = response.items[i];
+    document.getElementById("search-results").append(
+      document.createElement("br"),
+      document.createTextNode(item.htmlTitle)
+    );
+  }
+}*/
