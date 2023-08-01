@@ -1,4 +1,4 @@
-/* Color scheme - Linked to Home Page */
+/* Color scheme */
 :root {
     --base-color: #2E776D;
     --light: #509188;
@@ -72,6 +72,19 @@ article {
     display: flex;
     justify-content: space-around;
 }*/
+
+
+.testimonial {
+    display: flex;
+}
+
+.name {
+    width: 30%;
+}
+
+.text {
+    width: 65%;
+}
 
 .section-header {
     background-color: var(--lighter);
