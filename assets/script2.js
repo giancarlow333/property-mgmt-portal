@@ -11,7 +11,7 @@ var requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" +
 
 
 // https://stackoverflow.com/questions/25515936/perform-curl-request-in-javascript
-// by user https://stackoverflow.com/users/1244127/json-c11
+/* by user https://stackoverflow.com/users/1244127/json-c11
 fetch(requestURL)
   .then(function (response) {
     response.json().then(function(data) {
@@ -25,7 +25,7 @@ fetch(requestURL)
 */
 
 // https://developers.google.com/custom-search/v1/using_rest
-function displayResults(response) {
+async function displayResults(response) {
   for (var i = 0; i < response.items.length; i++) {
     var item = response.items[i];
     document.getElementById("search-results").append(
@@ -36,17 +36,17 @@ function displayResults(response) {
 }
 
 // Run script when button is clicked
-$(function () {
+$(async function () {
   // select button
   var btnElt = $("#button");
 
   // add listener to button
-  btnElt.on("click", function(event) {
+  btnElt.on("click", async function(event) {
     event.preventDefault();
     //https://stackoverflow.com/questions/10659097/jquery-get-selected-option-from-dropdown
     var propertyID = $("#property").find(":selected").val();
     var serviceID = $("#issue-type").find(":selected").val();
-    $("#search-results").text(propertyID);
+    //$("#search-results").text(propertyID);
 
     // set search location based on selection
     if (propertyID == "The Custom - Luxury Suites") {
@@ -74,8 +74,7 @@ $(function () {
     $("#search-results").text(requestURL);
     
     // run the search
-    fetch(requestURL).then(function (response) {
-      displayResults(response);
-    });
+    await fetch(requestURL).then(response => displayResults (response));
   });
 });
+
