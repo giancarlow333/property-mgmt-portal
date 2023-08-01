@@ -22,19 +22,10 @@ fetch(requestURL)
 <div class="gcse-search"></div>
 */
 
-// https://developers.google.com/custom-search/v1/using_rest
-async function displayResults(response) {
-  for (var i = 0; i < response.items.length; i++) {
-    var item = response.items[i];
-    document.getElementById("search-results").append(
-      document.createElement("br"),
-      document.createTextNode(item.htmlTitle)
-    );
-  }
-}
+
 
 // Run script when button is clicked
-$(async function () {
+$(function () {
   // select button
   var btnElt = $("#button");
 
@@ -68,10 +59,24 @@ $(async function () {
       searchTerm = "electrician";
     }
 
-    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\"";
+    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\"&callback=displayResults";
     $("#search-results").text(requestURL);
   });
   // run the search
-  await fetch(requestURL).then(response => displayResults (response.json()));
+  // https://stackoverflow.com/questions/7840003/google-custom-search-api-returning-invalid-json
+  btnElt.on("end", function () {
+    fetch(requestURL).then(response => response.json())
+      .then(data => console.log(data));
+  });
 });
 
+// https://developers.google.com/custom-search/v1/using_rest
+function displayResults(response) {
+  for (var i = 0; i < response.items.length; i++) {
+    var item = response.items[i];
+    document.getElementById("search-results").append(
+      document.createElement("br"),
+      document.createTextNode(item.htmlTitle)
+    );
+  }
+}
