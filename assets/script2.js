@@ -8,22 +8,6 @@ var searchTerm;
 var requestURL;
 
 
-// https://stackoverflow.com/questions/25515936/perform-curl-request-in-javascript
-/* by user https://stackoverflow.com/users/1244127/json-c11
-fetch(requestURL)
-  .then(function (response) {
-    response.json().then(function(data) {
-      console.log(data);
-    });
-  });
-  /*
-  <script async src="https://cse.google.com/cse.js?cx=54f51fe0be357423e">
-</script>
-<div class="gcse-search"></div>
-*/
-
-
-
 // Run script when button is clicked
 $(function () {
   // select button
@@ -32,10 +16,9 @@ $(function () {
   // add listener to button
   btnElt.on("click", function(event) {
     event.preventDefault();
-    //https://stackoverflow.com/questions/10659097/jquery-get-selected-option-from-dropdown
+
     var propertyID = $("#property").find(":selected").val();
     var serviceID = $("#issue-type").find(":selected").val();
-    //$("#search-results").text(propertyID);
 
     // set search location based on selection
     if (propertyID == "The Custom - Luxury Suites") {
@@ -60,20 +43,21 @@ $(function () {
     }
 
     requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\"&callback=displayResults";
-    $("#search-results").text(requestURL);
-  });
-  // run the search
-  // https://stackoverflow.com/questions/7840003/google-custom-search-api-returning-invalid-json
-  btnElt.on("end", function () {
-    fetch(requestURL).then(response => response.json())
-      .then(data => console.log(data));
+    $("#script-2").attr("src", requestURL);
   });
 });
 
-// https://developers.google.com/custom-search/v1/using_rest
+// Display the results on the page
 function displayResults(response) {
+  console.log(response);
+  if (!response.items) {
+    var paragraph = document.createElement("p");
+    paragraph.textContent = "The search produced no results."
+    document.getElementById("search-results").append(paragraph);
+  }
   for (var i = 0; i < response.items.length; i++) {
     var item = response.items[i];
+    console.log(item);
     document.getElementById("search-results").append(
       document.createElement("br"),
       document.createTextNode(item.htmlTitle)
