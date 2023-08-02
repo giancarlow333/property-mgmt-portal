@@ -59,21 +59,25 @@ $(function () {
       searchTerm = "electrician";
     }
 
-    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\""; //&callback=displayResults";
-    $("#search-results").text(requestURL);
+    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\"&callback=displayResults";
+    //$("#search-results").text(requestURL);
+    var scriptTag = "<script src=\"" + requestURL + "\"></script>";
+    $("#script-2").attr("src", requestURL);
   });
-  // run the search
+  /* run the search
   // https://stackoverflow.com/questions/7840003/google-custom-search-api-returning-invalid-json
-  btnElt.on("end", function () {
+  await btnElt.on("end", async function () {
     fetch(requestURL).then(response => response.json())
       .then(data => console.log(data));
-  });
+  }); */
 });
 
 // https://developers.google.com/custom-search/v1/using_rest
 function displayResults(response) {
+  console.log(response);
   for (var i = 0; i < response.items.length; i++) {
     var item = response.items[i];
+    console.log(item);
     document.getElementById("search-results").append(
       document.createElement("br"),
       document.createTextNode(item.htmlTitle)
