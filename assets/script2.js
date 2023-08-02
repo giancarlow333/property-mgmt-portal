@@ -75,6 +75,11 @@ $(function () {
 // https://developers.google.com/custom-search/v1/using_rest
 function displayResults(response) {
   console.log(response);
+  if (!response.items) {
+    var paragraph = document.createElement("p");
+    paragraph.textContent = "The search produced no results."
+    document.getElementById("search-results").append(paragraph);
+  }
   for (var i = 0; i < response.items.length; i++) {
     var item = response.items[i];
     console.log(item);
