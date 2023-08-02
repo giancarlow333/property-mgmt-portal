@@ -15,7 +15,9 @@ The front page of the website that features testimonials from (fictitious) resid
 
 ## Mock-Up
 
-**(TBD SCREENSHOT)**
+The home page looks like this:
+
+![A screenshot of index.html](./assets/home_page_screenshot.png)
 
 ## Technologies Used
 
