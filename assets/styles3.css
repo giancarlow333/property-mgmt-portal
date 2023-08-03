@@ -21,3 +21,67 @@ button {
     display: inline-block;
     border-radius: 10px;
   }
+
+  .container {
+    width: cover !important;
+    margin: 1% !important;
+    padding: 1% !important;
+  }
+
+  li {
+    width: 40%;
+    display: inline-block;
+    margin-left: 5%;
+    color: black;
+  }
+a:link {
+    color: black;
+} 
+
+  ul {
+    margin-left: 10%;
+  }
+
+  h2 {
+    justify-content: center;
+    margin-left: 35%;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px !important;
+    font-style: oblique;
+  }
+
+  .name {
+    width: 50%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    display: inline-block;
+  }
+
+  .rule {
+    display: inline-block;
+    width: 45%;
+    margin-right: 1%;
+  }
+
+.description {
+    width: 65%;
+    margin-left: 15%;
+    display:inline-block;
+}
+
+.section-header {
+    background-color: var(--lighter);
+    width: 33%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.section-contents {
+    background-color: var(--lighter);
+    width: 67%;
+    margin: 10px;
+    padding: 10px;
+}
