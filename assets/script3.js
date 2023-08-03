@@ -1,5 +1,6 @@
-var documentUrl = 'https://file.io/Y4cj8ay4VKBV';
+var documentUrl = 'https://file.io/667ba0ec-2c9e-4b50-a3fc-c10410b47ce0';
 var mainURL = "https://file.io";
+var APIkey = "4DAVH2K.YSYNBD6-EKPMT8E-JFGXKR5-7XCGTZX"
 
 
 var responseText = document.getElementById('formsReturn');
@@ -20,23 +21,14 @@ function getDocuments() {
     .then(function (data) {
     console.log(data);
   });})
-
 }
 
-getApi(badRequestUrl);
+getDocuments(documentUrl);
 
 
-fetch(requestUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log('Fetch Response \n-------------');
-    console.log(data);
-  });
 
 
-  var repoList = document.querySelector('ul');
+var docList = document.querySelector('ul');
 var fetchButton = document.getElementById('fetch-button');
 
 //getApi function is called when the fetchButton is clicked
