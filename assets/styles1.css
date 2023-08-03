@@ -61,9 +61,12 @@ ol, ul {
     padding: 1% 2%;
     color: #fff;
     background-color: #13293d;
-    border: none;
+    border: 3px outset var(--base-color);
     outline: none;
     cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
   }
   
   /* What does this CSS rule do? do not want webrowser to apply extra elements*/
@@ -92,15 +95,6 @@ ol, ul {
       text-align: center;
       display:flexbox
     }
-
-button {
-  border: 3px outset var(--base-color);
-  padding: 20px 20px;
-  text-align: center;
-  display: inline-block;
-  border-radius: 10px;
-
-}
 
 #emergencyanswers {
   display: flex;
