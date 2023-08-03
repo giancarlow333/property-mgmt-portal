@@ -21,16 +21,16 @@ $(function () {
 
     // set search location based on selection
     if (propertyID == "The Custom - Luxury Suites") {
-      searchLocation = "2424 77th Street Los Angeles, CA 90247";
+      searchLocation = "90247";
     }
     else if (propertyID == "JW Lofts") {
-      searchLocation = "7117 Sepulveda Ave. Los Angeles, CA 90247";
+      searchLocation = "90247";
     }
     else if (propertyID == "The Giancarlo") {
-      searchLocation = "4242 Robinson Way Los Angeles, CA 90042";
+      searchLocation = "90042";
     }
     else if (propertyID == "Crystal Lake Apartments") {
-      searchLocation = "1313 Elm Street Los Angeles, CA 90066";
+      searchLocation = "90066";
     }
 
     // set search term based on selection
@@ -41,7 +41,7 @@ $(function () {
       searchTerm = "electrician";
     }
 
-    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " AND " + searchLocation + "\"&callback=displayResults";
+    requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + " " + searchLocation + "\"&callback=displayResults";
     $("#script-2").attr("src", requestURL);
   });
 });
