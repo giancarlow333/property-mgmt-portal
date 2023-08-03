@@ -28,7 +28,7 @@ The home page looks like this:
 
 ## Deployed Application
 
-You can find a live version of the site [here](LINK_GOES_HERE).
+You can find a live version of the site [here](https://giancarlow333.github.io/property-mgmt-portal/).
 
 ## Sources
 
