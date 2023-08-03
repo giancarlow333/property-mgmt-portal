@@ -1,20 +1,19 @@
-if (currentPage === "reimbursement") {
-    var menuElt = document.getElementById("reimbursement");
-    menuElt.setAttribute("class", "bg-cyan-700");
-}
-else if (currentPage === "search") {
-    var menuElt = document.getElementById("search");
-    menuElt.setAttribute("class", "bg-cyan-700");
-}
-else if (currentPage === "rules") {
-    var menuElt = document.getElementById("rules");
-    menuElt.setAttribute("class", "bg-cyan-700");
-}
-else if (currentPage === "properties") {
-    var menuElt = document.getElementById("properties");
-    menuElt.setAttribute("class", "bg-cyan-700");
-};
 
+var submitB = getElementbyID("button")
+
+Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "username",
+    Password : "password",
+    To : 'them@website.com',
+    From : "you@isp.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+
+addEventListener.submitB("click", Email.send)
 
 const APIKey = "";
 const baseURL = "https://customsearch.googleapis.com/customsearch/v1?";

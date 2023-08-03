@@ -9,3 +9,15 @@
     background-size: cover;
     background-position: center;
 }
+
+button {
+    padding: 1% 2%;
+    color: #fff;
+    background-color: #13293d;
+    border: 3px outset var(--base-color);
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+  }
