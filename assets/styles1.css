@@ -104,3 +104,12 @@ ol, ul {
   margin: 5px;
 }
 
+
+#title {
+  margin-bottom: 2%;
+  margin-top: 2%;
+  background-color: var(--base-color);
+  color: white;
+  font-style: oblique;
+  font-size: larger;
+}

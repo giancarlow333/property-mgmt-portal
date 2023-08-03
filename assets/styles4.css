@@ -20,3 +20,21 @@ button {
     text-align: center;
     display: inline-block;
   }
+
+  h2 {
+    justify-content: center;
+    margin-left: 35%;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px !important;
+    font-style: oblique;
+  }
+
+  #title {
+    margin-bottom: 0;
+    margin-top: 2%;
+    background-color: var(--base-color);
+    color: white;
+    
+  }
