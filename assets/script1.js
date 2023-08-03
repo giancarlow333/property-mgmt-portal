@@ -6,67 +6,43 @@ var searchLocation;
 var searchTerm;
 var requestURL;
 
-# Run:
-curl -s \
--X POST \
---user "$MJ_APIKEY_PUBLIC:$MJ_APIKEY_PRIVATE" \
-https://api.mailjet.com/v3.1/send \
--H 'Content-Type: application/json' \
--d '{
 
+//testing API
+//fetch ("https://mandrillapp.com/api/1.0/users/ping"), {
+//method:"POST"
+//header: 'Content-Type: application/json' 
+//data-raw: '{ "key": "YOUR_API_KEY" }'}
 
-    curl -sS -X POST "https://mandrillapp.com/api/1.0/users/ping" \
-    --header 'Content-Type: application/json' \
-    --data-raw '{ "key": "YOUR_API_KEY" }'
-
-
-    const mailchimpClient = require("@mailchimp/mailchimp_transactional")(
-        "md-NbUjRtqyFGcJ8YTmbRAu7A"
-      );
-      
-      const run = async () => {
-        const response = await mailchimpClient.messages.send({ message: {} });
-        console.log(response);
-      };
-      
-      run();
-      
-}
-]
-}'
-
-=================================
-
-var options = {
-  hostname: 'posttestserver.com',
-  port: 443,
-  path: '/post.php',
-  method: 'POST',
-  headers: {
-       'Content-Type': 'application/x-www-form-urlencoded',
-       'Content-Length': postData.length
-     }
-};
-
+    //send first transactional
+    fetch("https://mandrillapp.com/api/1.0/messages/send", {
+        method: "POST",
+        body: JSON.stringify({
+            "key": "$md-NbUjRtqyFGcJ8YTmbRAu7A", "message": {"from_email": "jennywnba@gmail.com", "subject": "Hello World", "text": "Welcome to Mailchimp Transactional!", "to": [{ "email": "jennywnba@gmail.com", "type": "to"}]}
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+        .then((response))
+      });
 
 
 
 
 // JS email send option
 
-var submitB = getElementbyID("button")
+//var submitB = getElementbyID("button")
 
-Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "username",
-    Password : "password",
-    To : 'them@website.com',
-    From : "you@isp.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
+//Email.send({
+  //  Host : "smtp.elasticemail.com",
+  //  Username : "username",
+  // // Password : "password",
+  //  To : 'them@website.com',
+  //  From : "you@isp.com",
+  //  Subject : "This is the subject",
+  //  Body : "And this is the body"
+//}).then(
+  //message => alert(message)
+//);
 
 addEventListener.submitB("click", Email.send)
 

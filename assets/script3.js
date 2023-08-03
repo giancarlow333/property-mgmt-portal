@@ -24,10 +24,6 @@ function getDocuments() {
   });})
 }
 
-
-
-
-
 var docList = document.querySelector('ul');
 var fetchButton = document.getElementById('fetch-button');
 
