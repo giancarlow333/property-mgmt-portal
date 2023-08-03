@@ -20,14 +20,33 @@
         <main class="container">
             <!-- TESTIMONIALS -->
             <article class="flex flex-row border-solid border-2 border-emerald-700 m-4 text-emerald-900">
-                <section class="container mx-auto p-4">Service Search</section>
                 <section class="container mx-auto p-4">
-                    Please search for sevice of your choice below!
+                    <h1 class="header">Select below</h1>
+                    <form>
+                        <p class="flex-row">
+                            <label for="property">Property</label>
+                            <select id="property">
+                                <option>The Custom - Luxury Suites</option>
+                                <option>JW Lofts</option>
+                                <option>The Giancarlo</option>
+                                <option>Crystal Lake Apartments</option>
+                            </select>
+                        </p>
+                        <p class="flex-row">
+                            <label for="issue-type">Service Needed</label>
+                            <select id="issue-type">
+                                <option>Plumbing</option>
+                                <option>Electrical</option>>
+                            </select>
+                        </p>
+                        <p>
+                            <button id="button">Submit</button>
+                        </p>
+                    </form>
                 </section>
-            </article>
-            
-            <article id="search-results">
-
+                <section class="container mx-auto p-4">
+                    <span id="search-results"></span>
+                </section>
             </article>
         </main>
         <footer class="bg-emerald-700 text-emerald-50">
@@ -46,7 +65,8 @@
         </script>
         <script src="./assets/script.js"></script>
         <script src="./assets/script2.js"></script>
-        <script src="https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyBpzAJtDlPPG6C2l0fUZM558KSRGdIRbT8&cx=54f51fe0be357423e&q='plumbers near me'&callback=displayResults">
-        </script>
+        <script id="script-2"></script>
+        <!-- <script src="https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyBpzAJtDlPPG6C2l0fUZM558KSRGdIRbT8&cx=54f51fe0be357423e&q='plumbers near me'&callback=displayResults">
+        </script> -->
     </body>
 </html>
