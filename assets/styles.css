@@ -71,6 +71,7 @@ article {
     margin: 15px;
     display: flex;
     justify-content: space-around;
+    
 }*/
 
 
@@ -127,4 +128,7 @@ button {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
+}
+#flex-row { 
+
 }

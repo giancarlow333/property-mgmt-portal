@@ -16,7 +16,6 @@ $(function () {
   // add listener to button
   btnElt.on("click", function(event) {
     event.preventDefault();
-
     var propertyID = $("#property").find(":selected").val();
     var serviceID = $("#issue-type").find(":selected").val();
 
