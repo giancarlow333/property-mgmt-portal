@@ -7,6 +7,7 @@ var responseText = document.getElementById('formsReturn');
 
 function getDocuments() {
   fetch(documentUrl)
+  console.log("fetching")
     .then(function (response) {
       // Check the console first to see the response.status
       console.log(response.status);
@@ -23,7 +24,6 @@ function getDocuments() {
   });})
 }
 
-getDocuments(documentUrl);
 
 
 
@@ -31,10 +31,6 @@ getDocuments(documentUrl);
 var docList = document.querySelector('ul');
 var fetchButton = document.getElementById('fetch-button');
 
-//getApi function is called when the fetchButton is clicked
-
-function getApi() {
-  var requestUrl = 'https://api.github.com/users/alathea23/repos';
 
   fetch(requestUrl)
     .then(function (response) {
@@ -53,6 +49,5 @@ function getApi() {
         repoList.appendChild(listItem);
       }
     });
-}
 
-fetchButton.addEventListener('click', getApi);
+fetchButton.addEventListener('click', getDocuments);
