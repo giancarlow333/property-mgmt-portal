@@ -1,11 +1,11 @@
 
 
 .header-img {
-    background-image: url(./image4.png);
+    background-image: url(./pexels-expect-best-323780.jpg);
     height: 250px;
     width: 100%;
     margin-bottom: 30px;
-    margin-top: 15px;
+    margin-top: 50px;
     background-size: cover;
     background-position: center;
 }
@@ -22,3 +22,40 @@ button {
     display: inline-block;
     border-radius: 10px;
   }
+
+
+  .photo {
+    width: 20%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.text {
+    width: 80%;
+}
+
+.timage {
+object-fit: cover;
+width: 80%;
+height: 70%;
+
+}
+
+.name {
+    margin-top: 3%;
+    margin-left: 55%
+}
+.section-header {
+    background-color: var(--lighter);
+    width: 33%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.section-contents {
+    background-color: var(--lighter);
+    width: 67%;
+    margin: 10px;
+    padding: 10px;
+}
