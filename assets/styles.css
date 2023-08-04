@@ -102,6 +102,10 @@ height: 70%;
     margin-top: 3%;
     margin-left: 55%
 }
+.name2 {
+    margin-top: 3%;
+    margin-left: 30%
+}
 .section-header {
     background-color: var(--lighter);
     width: 33%;
@@ -141,4 +145,58 @@ button {
     display: flex;
     padding-top: 1%;
     padding-bottom: 1%;
+        margin-left: 15% !important;
+        margin-right: 5% !important;
+
   }
+  .container {
+    width: 100% !important;
+    margin-right: 0 !important;
+    display: inline-flexbox;
+
+  }
+
+
+  article {
+    width: 100% !important;
+    margin-left: 5% !important;
+    margin-right: 0 !important;
+  }
+
+
+  @media screen and (max-width: 668px) {
+
+
+  .timage {
+    -ms-transform: translateY(7%);
+    transform: translateY(7%);
+    width: 100% !important;
+    display: cover !important;
+    margin-left: 0% !important;
+    padding-left: 0 !important;
+  };
+  
+  .photo {
+    width: 100% !important;
+    height: 50% !important;
+    margin-left: 0% !important;
+    padding-left: 0 !important;
+  }
+  
+  .container {
+    margin-left: 1% !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  
+  #title {
+  margin-bottom: 0;
+  margin-top: 2%;
+  background-color: var(--base-color);
+  color: white;
+  margin-left: 1% !important;
+  margin-right: 8% !important;
+  }
+  }
+  
