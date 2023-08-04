@@ -47,7 +47,7 @@ header ul {
 
 .header-img {
     background-image: url(./image4.png);
-    height: 250px;
+    height: 300px !important;
     width: 100%;
     margin-bottom: 30px;
     margin-top: 15px;
@@ -129,6 +129,16 @@ button {
     flex-wrap: nowrap;
     flex-direction: row;
 }
-#flex-row { 
-
-}
+#title {
+    margin-bottom: 2%;
+    margin-top: 2%;
+    background-color: var(--base-color);
+    color: white;
+    font-style: oblique;
+    font-size: larger;
+    justify-content: center;
+    justify-self: center;
+    display: flex;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
