@@ -28,7 +28,7 @@ button {
     padding: 1% !important;
   }
 
-  li {
+.PDF {
     width: 40%;
     display: inline-block;
     margin-left: 5%;
@@ -91,4 +91,39 @@ a:link {
     width: 67%;
     margin: 10px;
     padding: 10px;
+}
+
+
+@media screen and (max-width: 668px)  {
+    .timage {
+        -ms-transform: translateY(7%);
+        transform: translateY(7%);
+        width: 100% !important;
+        display: cover !important;
+        margin-left: 0% !important;
+        padding-left: 0 !important;
+      };
+
+      .photo {
+        width: 100% !important;
+        height: 50% !important;
+        margin-left: 0% !important;
+        padding-left: 0 !important;
+      }
+
+      .container {
+        margin-left: 1% !important;
+        width: 98% !important;
+        padding: 0 !important;
+    }
+
+
+  #title {
+    margin-bottom: 0;
+    margin-top: 2%;
+    background-color: var(--base-color);
+    color: white;
+    margin-left: 1% !important;
+    margin-right: 8% !important;
+  }
 }
