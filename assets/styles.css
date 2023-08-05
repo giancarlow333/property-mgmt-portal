@@ -15,6 +15,11 @@
 
 body {
     background-color: var(--lightest);
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-content: center;
+    justify-content: center;
 }
 
 a:link {
@@ -25,6 +30,26 @@ a:link {
 a:visited {
     color: var(--lightest);
     text-decoration: none;
+}
+
+.navhere.link {
+    color: var(--darkest) !important;
+    background-color: var(--lighter);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 12px;
+    padding-left: 12px;
+    align-self: center;
+}
+
+.navhere.visited {
+    color: var(--darkest) !important;
+    background-color: var(--lighter);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 12px;
+    padding-left: 12px;
+    align-self: center;
 }
 
 header,
@@ -136,7 +161,7 @@ button {
 #title {
     margin-bottom: 2%;
     margin-top: 2%;
-    background-color: var(--base-color);
+    background-color: var(--light);
     color: white;
     font-style: oblique;
     font-size: larger;
@@ -153,9 +178,15 @@ button {
     width: 100% !important;
     margin-right: 0 !important;
     display: inline-flexbox;
+    padding: 0 !important;
 
   }
 
+  .PDF {
+    margin-left: 13% !important;
+    width: 35% !important;
+
+  }
 
   article {
     width: 100% !important;
@@ -163,6 +194,37 @@ button {
     margin-right: 0 !important;
   }
 
+  .tooltip-wrap, .tooltip-wrap-2 {
+    position: relative;
+  }
+
+  .tooltip-wrap .tooltip-content {
+    display: none;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    right: 25%;
+    background-color: #fff;
+    color: var(--darker);
+    padding: .5em;
+    min-width: 18rem;
+  }
+
+  .tooltip-wrap-2 .tooltip-content {
+    display: none;
+    position: absolute;
+    bottom: 15%;
+    left: -385%;
+    right: -15%;
+    background-color: #fff;
+    color: var(--darker);
+    padding: .5em;
+    min-width: 15rem;
+  }
+
+  .tooltip-wrap:hover .tooltip-content, .tooltip-wrap-2:hover .tooltip-content {
+    display: block;
+  }
 
   @media screen and (max-width: 668px) {
 
@@ -193,10 +255,20 @@ button {
   #title {
   margin-bottom: 0;
   margin-top: 2%;
-  background-color: var(--base-color);
-  color: white;
-  margin-left: 1% !important;
-  margin-right: 8% !important;
+  margin-left: 0% !important;
+  margin-right: 4% !important;
+  }
+
+  .tooltip-wrap-2 .tooltip-content {
+    display: none;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    right: 25%;
+    background-color: #fff;
+    color: var(--darker);
+    padding: .5em;
+    min-width: 18rem;
   }
   }
   

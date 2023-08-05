@@ -108,8 +108,12 @@ ol, ul {
 #title {
   margin-bottom: 2%;
   margin-top: 2%;
-  background-color: var(--base-color);
+  background-color: var(--light);
   color: white;
   font-style: oblique;
   font-size: larger;
+  display: inline-flex!important;
+  margin-right: auto !important;
+  padding-left: 7% !important;
+  padding-right: 7% !important;
 }

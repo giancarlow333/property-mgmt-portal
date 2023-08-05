@@ -1,8 +1,42 @@
+
+
+//nav bar color
+
+var bodyElt = document.body;
+console.log(bodyElt);
+console.log(document.body);
+var currentPage = bodyElt.getAttribute("data-page");
+
+function navBarColor () {
+if (currentPage == "reimbursement") {
+    var menuElt = document.getElementById("reimbursement");
+    menuElt.setAttribute("class", "navhere");
+}
+else if (currentPage == "search") {
+    var menuElt = document.getElementById("search");
+    menuElt.setAttribute("class", "navhere");
+}
+else if (currentPage == "rules") {
+    var menuElt = document.getElementById("rules");
+    menuElt.setAttribute("class", "navhere");
+}
+else if (currentPage == "properties") {
+    var menuElt = document.getElementById("properties");
+    menuElt.setAttribute("class", "navhere");
+}
+};
+
+navBarColor ();
+
+//setting up forms API
+
 var documentUrl = 'https://file.io/667ba0ec-2c9e-4b50-a3fc-c10410b47ce0';
 var mainURL = "https://file.io";
 var APIkey = "4DAVH2K.YSYNBD6-EKPMT8E-JFGXKR5-7XCGTZX"
 
+navBarColor ();
 
+//forms API call
 var responseText = document.getElementById('formsReturn');
 
 function getDocuments() {
