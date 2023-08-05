@@ -25,7 +25,7 @@
                     <h1 class="header" id="title">Reimbursement/Service Repair Request</h1>
                     <div>
                     </div>
-                    <form target="div.formsReturn">
+                    <form target="textarea.formsReturn" method="POST" id="myForm">
                         <h3>Please Enter Your Service Details</h3>
                         <p>
                             <label for="username">Name:</label>
@@ -94,12 +94,13 @@
                             </p>
                         </div>
                         <p>
-                            <button id="button">Submit</button>
+                            <button type='submit' id="button">Submit</button>
                         </p>
                     </form>
-                    <div class="formsReturn">
-
-                    </div>
+                    <!-- https://jsfiddle.net/appelgran/asxu1dk8/-->
+                    <textarea id="formsReturn">
+                        We will respond within 6 hours of form submission.
+                    </textarea>
                 </article>
             </section>
     
@@ -110,10 +111,22 @@
         </main>
         <footer class="bg-emerald-700 text-emerald-50">
             <ul class="list-none flex flex-col md:flex-row">
-                <li>Contact Us</li>
-                <li>Property Addresses</li>
-                <li>Phone</li>
-                <li>Hours</li>
+                <li class="tooltip-wrap">
+                    <div>Contact Us</div>
+                    <div class="tooltip-content">General: (093)-310-5555<br>info@tasproperty.com</div>
+                </li>
+                <li class="tooltip-wrap">
+                    <div>Properties</div>
+                    <div class="tooltip-content">The Custom - Luxury Suites<br>JW Lofts<br>The Giancarlo<br>Crystal Lake Apartments</div>
+                </li>
+                <li class="tooltip-wrap">
+                    <div>Rental Contact</div>
+                    <div class="tooltip-content">Payments: Zelle or<br>Check payable to TAS Property Management</div>
+                </li>
+                <li class="tooltip-wrap-2">
+                    <div>Hours</div>
+                    <div class="tooltip-content">M-F: 8:30AM - 5:00 PM<br> S,S: 10:00 AM - 4:30 PM</div>
+                </li>
             </ul>
         </footer>
         <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
@@ -123,5 +136,6 @@
             });
         </script>
         <script src="./assets/script.js"></script>
+        <script src="./assets/script1.js"></script>
     </body>
 </html>

@@ -1,3 +1,34 @@
+//putting in the nav bar color
+var bodyElt = document.body;
+console.log(bodyElt);
+var currentPage = bodyElt.getAttribute("data-page");
+
+function navBarColor () {
+if (currentPage == "reimbursement") {
+    var menuElt = document.getElementById("reimbursement");
+    menuElt.setAttribute("class", "navhere");
+}
+else if (currentPage == "search") {
+    var menuElt = document.getElementById("search");
+    menuElt.setAttribute("class", "navhere");
+}
+else if (currentPage == "rules") {
+    var menuElt = document.getElementById("rules");
+    menuElt.setAttribute("class", "navhere");
+}
+else if (currentPage == "properties") {
+    var menuElt = document.getElementById("properties");
+    menuElt.setAttribute("class", "navhere");
+}
+};
+
+
+navBarColor ();
+
+
+navBarColor ();
+
+//setting up API variables
 
 const APIKey = "md-NbUjRtqyFGcJ8YTmbRAu7A";
 const baseURL = "https://customsearch.googleapis.com/customsearch/v1?";
@@ -12,8 +43,62 @@ var requestURL;
 //method:"POST"
 //header: 'Content-Type: application/json' 
 //data-raw: '{ "key": "YOUR_API_KEY" }'}
+var inputEmail= document.getElementById("email");
+localStorage.setItem("email", inputEmail.value);
+
+var inputName= document.getElementById("username");
+localStorage.setItem("email", inputName.value);
+
+var inputPhone= document.getElementById("phone");
+localStorage.setItem("email", inputPhone.value);
+
+var inputProperty= document.getElementById("property");
+localStorage.setItem("email", inputProperty.value);
+
+var inputIssueType= document.getElementById("issue-type");
+localStorage.setItem("email", inputIssueType.value);
+
+var inputDescription= document.getElementById("description");
+localStorage.setItem("email", inputDescription.value);
+
+var inputDescription= document.getElementById("");
+localStorage.setItem("email", inputE.value);
+
+var inputDescription= document.getElementById("description");
+localStorage.setItem("email", inputEmail.value);
+
+var form = document.querySelector("form");
+
+formData = new FormData(form);
+//checking formData function
+console.log(formData)
+
+document.querySelector('button').addEventListener("click", function (event) {
+  event.preventDefault();
+  console.log("button heard")
+
+	var ajax = new XMLHttpRequest();
+	
+	ajax.onload = function() {
+		document.querySelector("#formsReturn").value = "(Success)" + ajax.responseText;
+	};
+	
+	ajax.onerror = function() {
+		document.querySelector("#formsReturn").value = "(Error)" + ajax.responseText;
+	};
+
+  ajax.open("post", document.querySelector("#formsReturn").value = "(Success)" + ajax.responseText, true);
+
+  ajax.send(new FormData(this));
+
+  console.log (document.querySelector("#formsReturn").value)
+  console.log(new FormData(this));
+	
+});
+
 
     //send first transactional
+    function Email () {
     fetch("https://mandrillapp.com/api/1.0/messages/send", {
         method: "POST",
         body: JSON.stringify({
@@ -23,7 +108,7 @@ var requestURL;
           "Content-type": "application/json; charset=UTF-8"
         }
         .then((response))
-      });
+      });}
 
 
 
@@ -46,7 +131,7 @@ var requestURL;
 
 addEventListener.submitB("click", Email.send)
 
-//const APIKey = "";
+
 //const baseURL = "https://customsearch.googleapis.com/customsearch/v1?";
 //const senderURL = "https://api.mailjet.com/v3/REST/sender"
 

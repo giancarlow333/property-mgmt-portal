@@ -5,23 +5,27 @@ console.log(document.body);
 var currentPage = bodyElt.getAttribute("data-page");
 
 function navBarColor () {
-if (currentPage === "reimbursement") {
+if (currentPage == "reimbursement") {
     var menuElt = document.getElementById("reimbursement");
-    menuElt.setAttribute("class", "bg-cyan-700");
+    menuElt.setAttribute("class", "navhere");
 }
-else if (currentPage === "search") {
+else if (currentPage == "search") {
     var menuElt = document.getElementById("search");
-    menuElt.setAttribute("class", "bg-cyan-700");
+    menuElt.setAttribute("class", "navhere");
 }
-else if (currentPage === "rules") {
+else if (currentPage == "rules") {
     var menuElt = document.getElementById("rules");
-    menuElt.setAttribute("class", "bg-cyan-700");
+    menuElt.setAttribute("class", "navhere");
 }
-else if (currentPage === "properties") {
+else if (currentPage == "properties") {
     var menuElt = document.getElementById("properties");
-    menuElt.setAttribute("class", "bg-cyan-700");
+    menuElt.setAttribute("class", "navhere");
 }
 };
 
 
 navBarColor ();
+
+$(document).ready(function () {
+    $("#nav").load("./assets/navbar.html")
+});
