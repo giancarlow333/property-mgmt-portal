@@ -21,7 +21,7 @@ body {
     align-content: center;
     justify-content: center;
 }
-
+/*setting nav links styling*/
 a:link {
     color: var(--lightest);
     text-decoration: none;
@@ -51,7 +51,7 @@ a:visited {
     padding-left: 12px;
     align-self: center;
 }
-
+/*setting header/footer styling*/
 header,
 footer {
     color: var(--lightest);
@@ -98,7 +98,7 @@ article {
     justify-content: space-around;
     
 }*/
-
+/*homepage section stylings*/
 
 .testimonial {
     display: flex;
@@ -145,6 +145,7 @@ height: 70%;
     padding: 10px;
 }
 
+/*button and answer stylings*/
 button {
     border: 6px solid #000;
     padding: 20px 40px;
@@ -193,7 +194,7 @@ button {
     margin-left: 5% !important;
     margin-right: 0 !important;
   }
-
+/*footer hover-tip enabling*/
   .tooltip-wrap, .tooltip-wrap-2 {
     position: relative;
   }
@@ -226,6 +227,14 @@ button {
     display: block;
   }
 
+  footer a {
+color: var(--darker) !important;
+  }
+
+  footer a:visited {
+    color: var(--darker) !important;
+      }
+/* media screens*/
   @media screen and (max-width: 668px) {
 
 
