@@ -46,6 +46,54 @@ form.addEventListener('submit', async (event) => {
 
 console.log("stop default")
 
+
+//function SendGrid () {
+  //var Key = "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"
+//var Server = "smtp.sendgrid.net"
+//var Ports = [25, 587]
+//UserName = "apikey"
+//Password = "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"
+//}
+
+//testing API
+function TestAPI () {
+  fetch("https://mandrillapp.com/api/1.0/users/ping", {
+  method: "POST",
+  body: JSON.stringify({
+  key: "md-NbUjRtqyFGcJ8YTmbRAu7A"
+  }),
+  headers: {
+  "Content-Type": "application/json"
+  }
+  })
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+  }
+
+  TestAPI ()
+  console.log("tested")
+
+   //send first transactional
+   function Email () {
+    fetch("https://mandrillapp.com/api/1.0/messages/send", {
+        method: "POST",
+        body: JSON.stringify({
+            key: "md-NbUjRtqyFGcJ8YTmbRAu7A", message: 
+            {from_email: "jennywnba@gmail.com", subject: "Hello World", 
+            text:"Sending our first email:", to: 
+            [{ email: "jennywnba@gmail.com", type: "to"}]}
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then((response) => response.json())
+      .then((json) => console.log(json))}
+
+      // to add into text once a text email sends:
+      //"name:+ inputName + "  phone: " + inputPhone + "   email: " + inputEmail + "  issue-type: " + inputIssueType + "  description:" + inputDescription
+
+
 // Run script when button is clicked
 $(function () {
   // select button
@@ -54,8 +102,10 @@ $(function () {
   // add listener to button
   btnElt.on("click", function(event) {
     event.preventDefault();
-    var emailID = $("#email").val();
 
+    Email()
+
+    var emailID = $("#email").val();
     var issueType = $("#issue-type").find(":selected").val();
 
     // set search location based on selection
@@ -75,57 +125,52 @@ $(function () {
         emailSubject = "Tenant Issue"; };
 
         console.log("button pressed")
+        console.log(emailSubject)
+        console.log(emailID)
 
     })
     console.log("button listening")
   })
 
-document.querySelector('button').addEventListener("click", function (event) {
-  event.preventDefault();
-  console.log("button heard")
+  //alt using FormData to stringify form output??
+//document.querySelector('button').addEventListener("click", function (event) {
+  //event.preventDefault();
+  //console.log("button heard")
+//
+	//var ajax = new XMLHttpRequest();
 
-	var ajax = new XMLHttpRequest();
+ // console.log(ajax.responseText)
 
-  console.log("adding alternate forms path")
+ // var myForm = $("#form")[0]
+  // new FormData(myForm)
+
+ // console.log("adding alternate forms path")
 	
-	ajax.onload = function() {
-		document.querySelector("#formsReturn").value = "(Success)" + ajax.responseText;
-	};
+//	ajax.onload = function() {
+	//	document.querySelector("#formsReturn").value = "(Success1)" + ajax.responseText;
+//	};
 	
-	ajax.onerror = function() {
-		document.querySelector("#formsReturn").value = "(Error)" + ajax.responseText;
-	};
+	//ajax.onerror = function() {
+	//	document.querySelector("#formsReturn").value = "(Error)" + ajax.responseText;
+	//};
 
-  ajax.open("post", document.querySelector("#formsReturn").value = "(Success)" + ajax.responseText, true);
+  //ajax.open("post", document.querySelector("#formsReturn").value = "(Success2)" + ajax.responseText, true);
 
-  ajax.send(new FormData(this));
+ // ajax.send(new FormData(myForm));
 
-  console.log (document.querySelector("#formsReturn").value)
-  console.log(new FormData(this));
-	
-});
-
-
-    //send first transactional
-    function Email () {
-    fetch("https://mandrillapp.com/api/1.0/messages/send", {
-        method: "POST",
-        body: JSON.stringify({
-            "key": "md-NbUjRtqyFGcJ8YTmbRAu7A", "message": {"from_email": "jennywnba@gmail.com", "subject": "Hello World", "text": "Welcome to Mailchimp Transactional!", "to": [{ "email": "jennywnba@gmail.com", "type": "to"}]}
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
-        .then((response))
-      });}
-
-
-
+ // console.log (document.querySelector("#formsReturn").value)
+ // console.log(new FormData(myForm));
+//});
 
 // JS email send option
 
 //var submitB = getElementbyID("button")
 
+//
+//
+//
+//            ALTERNATE OPTION: 
+// Send email via javascript library rather than API
 //Email.send({
   //  Host : "smtp.elasticemail.com",
   //  Username : "username",
@@ -138,7 +183,7 @@ document.querySelector('button').addEventListener("click", function (event) {
   //message => alert(message)
 //);
 
-addEventListener.submitB("click", Email.send)
+form.addEventListener("click", Email.send)
 
 
 // https://stackoverflow.com/questions/25515936/perform-curl-request-in-javascript
