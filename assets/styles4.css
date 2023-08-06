@@ -136,8 +136,8 @@ button {
     margin-top: 2%;
     background-color: var(--light);
     color: white;
-    margin-left: 1% !important;
-    margin-right: 8% !important;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
   }
 }
 

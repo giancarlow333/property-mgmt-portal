@@ -209,6 +209,8 @@ button {
     color: var(--darker);
     padding: .5em;
     min-width: 18rem;
+    opacity: 90%;
+    border-radius: 5px;
   }
 
   .tooltip-wrap-2 .tooltip-content {
@@ -221,6 +223,8 @@ button {
     color: var(--darker);
     padding: .5em;
     min-width: 15rem;
+    opacity: 90%;
+    border-radius: 5px;
   }
 
   .tooltip-wrap:hover .tooltip-content, .tooltip-wrap-2:hover .tooltip-content {
