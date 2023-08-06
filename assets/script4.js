@@ -1,27 +1,24 @@
 //nav bar color
-
-var bodyElt = document.body;
-console.log(bodyElt);
-console.log(document.body);
-var currentPage = bodyElt.getAttribute("data-page");
-
 function navBarColor () {
-if (currentPage == "reimbursement") {
-    var menuElt = document.getElementById("reimbursement");
-    menuElt.setAttribute("class", "navhere");
-}
-else if (currentPage == "search") {
-    var menuElt = document.getElementById("search");
-    menuElt.setAttribute("class", "navhere");
-}
-else if (currentPage == "rules") {
-    var menuElt = document.getElementById("rules");
-    menuElt.setAttribute("class", "navhere");
-}
-else if (currentPage == "properties") {
-    var menuElt = document.getElementById("properties");
-    menuElt.setAttribute("class", "navhere");
-}
-};
-
-navBarColor ();
+    if (currentPage == "reimbursement") {
+        let menuElt = document.getElementById("reimbursement");
+        menuElt.classList.add("navhere");
+    }
+    else if (currentPage == "search") {
+        let menuElt = document.getElementById("search");
+        menuElt.classList.add("navhere");
+    }
+    else if (currentPage == "rules") {
+        let menuElt = document.getElementById("rules");
+        menuElt.classList.add("navhere");
+    }
+    else if (currentPage == "properties") {
+        let menuElt = document.getElementById("properties");
+        menuElt.classList.add("navhere");
+    }
+    };
+    
+  
+  navBarColor ();
+  
+  console.log("nav created")

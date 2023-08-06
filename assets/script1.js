@@ -1,38 +1,9 @@
-//putting in the nav bar color
-var bodyElt = document.body;
-console.log(bodyElt);
-var currentPage = bodyElt.getAttribute("data-page");
 
-function navBarColor () {
-if (currentPage == "reimbursement") {
-    var menuElt = document.getElementById("reimbursement");
-    menuElt.setAttribute("class", "navhere");
-}
-else if (currentPage == "search") {
-    var menuElt = document.getElementById("search");
-    menuElt.setAttribute("class", "navhere");
-}
-else if (currentPage == "rules") {
-    var menuElt = document.getElementById("rules");
-    menuElt.setAttribute("class", "navhere");
-}
-else if (currentPage == "properties") {
-    var menuElt = document.getElementById("properties");
-    menuElt.setAttribute("class", "navhere");
-}
-};
-
-
-navBarColor ();
-
-
-navBarColor ();
 
 //setting up API variables
 
-const APIKey = "md-NbUjRtqyFGcJ8YTmbRAu7A";
-const baseURL = "https://customsearch.googleapis.com/customsearch/v1?";
-const searchEngineID = "54f51fe0be357423e";
+var apiMC = "md-NbUjRtqyFGcJ8YTmbRAu7A";
+var baseURL = "https://customsearch.googleapis.com/customsearch/v1?";
 var searchLocation;
 var searchTerm;
 var requestURL;
@@ -61,23 +32,61 @@ localStorage.setItem("email", inputIssueType.value);
 var inputDescription= document.getElementById("description");
 localStorage.setItem("email", inputDescription.value);
 
-var inputDescription= document.getElementById("");
-localStorage.setItem("email", inputE.value);
-
 var inputDescription= document.getElementById("description");
 localStorage.setItem("email", inputEmail.value);
 
-var form = document.querySelector("form");
+const form = document.getElementById("myForm");
 
 formData = new FormData(form);
 //checking formData function
 console.log(formData)
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();})
+
+console.log("stop default")
+
+// Run script when button is clicked
+$(function () {
+  // select button
+  var btnElt = $('#button');
+
+  // add listener to button
+  btnElt.on("click", function(event) {
+    event.preventDefault();
+    var emailID = $("#email").val();
+
+    var issueType = $("#issue-type").find(":selected").val();
+
+    // set search location based on selection
+    if (issueType == "Reimbursement") {
+      emailSubject = "Reimbursement Request";
+    }
+    else if (issueType == "Plumbing") {
+      emailSubject = "Plumbing Service Request";
+    }
+    else if (issueType == "Electrical") {
+      emailSubject = "Electrical Service Request";
+    }
+    else if (issueType == "Complaint") {
+      searchLocation = "Tenant Complaint";}
+
+    else if (issueType == "Other Issue") {
+        emailSubject = "Tenant Issue"; };
+
+        console.log("button pressed")
+
+    })
+    console.log("button listening")
+  })
 
 document.querySelector('button').addEventListener("click", function (event) {
   event.preventDefault();
   console.log("button heard")
 
 	var ajax = new XMLHttpRequest();
+
+  console.log("adding alternate forms path")
 	
 	ajax.onload = function() {
 		document.querySelector("#formsReturn").value = "(Success)" + ajax.responseText;
@@ -102,7 +111,7 @@ document.querySelector('button').addEventListener("click", function (event) {
     fetch("https://mandrillapp.com/api/1.0/messages/send", {
         method: "POST",
         body: JSON.stringify({
-            "key": "$md-NbUjRtqyFGcJ8YTmbRAu7A", "message": {"from_email": "jennywnba@gmail.com", "subject": "Hello World", "text": "Welcome to Mailchimp Transactional!", "to": [{ "email": "jennywnba@gmail.com", "type": "to"}]}
+            "key": "md-NbUjRtqyFGcJ8YTmbRAu7A", "message": {"from_email": "jennywnba@gmail.com", "subject": "Hello World", "text": "Welcome to Mailchimp Transactional!", "to": [{ "email": "jennywnba@gmail.com", "type": "to"}]}
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8"
@@ -132,17 +141,7 @@ document.querySelector('button').addEventListener("click", function (event) {
 addEventListener.submitB("click", Email.send)
 
 
-//const baseURL = "https://customsearch.googleapis.com/customsearch/v1?";
-//const senderURL = "https://api.mailjet.com/v3/REST/sender"
-
-//string userAgent = "mailjet-apiv3-java/v5.2.3"
-
-//var searchLocation = "350%205th%20Ave,%20New%20York,%20NY%2010118";
-//var searchTerm = "plumber";
-
-//var requestURL = baseURL + "key=" + APIKey + "&cx=" + searchEngineID + "&q=\"" + searchTerm + "%20AND%20" + searchLocation + "\"";
-
-
 // https://stackoverflow.com/questions/25515936/perform-curl-request-in-javascript
 // by user https://stackoverflow.com/users/1244127/json-c11
-fetch(requestURL)
+
+//fetch(requestURL)
