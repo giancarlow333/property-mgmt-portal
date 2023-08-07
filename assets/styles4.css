@@ -42,7 +42,7 @@ button {
   #title {
     margin-bottom: 0;
     margin-top: 2%;
-    background-color: var(--light);
+    background-color: rgb(49, 49, 159);
     color: white;
     margin-left: 5% !important;
     margin-right: 3% !important;
@@ -134,10 +134,10 @@ button {
   #title {
     margin-bottom: 0;
     margin-top: 2%;
-    background-color: var(--light);
+    background-color: rgb(49, 49, 159);;
     color: white;
-    margin-left: 0% !important;
-    margin-right: 0% !important;
+    margin-left: 4% !important;
+    margin-right: 4% !important;
   }
 }
 

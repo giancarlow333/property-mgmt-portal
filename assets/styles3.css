@@ -54,9 +54,10 @@ a:link {
   #title2 {
     margin-bottom: 2%;
     margin-top: 2%;
-    background-color: var(--light);
+    background-color: rgb(49, 49, 159);
     color: white;
     display: cover !important;
+    border-radius: 7px;;
   }
   .name {
     width: 50%;
