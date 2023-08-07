@@ -1,85 +1,86 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Repair/Reimbursement Submission</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/styles.css" />
-        <link rel="stylesheet" href="./assets/styles1.css" />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://smtpjs.com/v3/smtp.js"> </script>
-    </head>
-    <body data-page="reimbursement">
-        <header class="bg-emerald-700 text-emerald-50">
-            <h1 class="text-3xl"><a href="./index.html">TAS Property Management Portal</a></h1>
-            <div class="header-img"></div>
-            <nav id="nav"></nav>
-        </header>
-        <main class="container">
-            <!-- TESTIMONIALS -->
-            <section>
-                <article>
-                    <h1 class="header" id="title">Reimbursement/Service Repair Request</h1>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repair/Reimbursement Submission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="./assets/styles1.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"> </script>
+</head>
+
+<body data-page="reimbursement">
+    <header class="bg-emerald-700 text-emerald-50">
+        <h1 class="text-3xl"><a href="./index.html">TAS Property Management Portal</a></h1>
+        <div class="header-img"></div>
+        <nav id="nav"></nav>
+    </header>
+    <main class="container">
+        <!-- TESTIMONIALS -->
+        <section>
+            <article>
+                <h1 class="header" id="title">Reimbursement/Service Repair Request</h1>
+                <div>
+                </div>
+                <form target="textarea.formsReturn" method="POST" id="myForm">
+                    <h3>Please Enter Your Service Details</h3>
+                    <p>
+                        <label for="username">Name:</label>
+                        <input class="text-input" id="username" type="text" placeholder="First Last" />
+                    </p>
+                    <p>
+                        <label for="phone">Phone:</label>
+                        <input class="text-input" id="phone" type="number" placeholder="XXX-XXX-XXXX" />
+                    </p>
+                    <p>
+                        <label for="email">E-mail:</label>
+                        <input class="text-input" id="email" type="text" placeholder="me@example.com" />
+                    </p>
+                    <p class="flex-row">
+                        <label for="property">Property</label>
+                        <select id="property">
+                            <option>The Custom - Luxury Suites</option>
+                            <option>JW Lofts</option>
+                            <option>The Giancarlo</option>
+                            <option>Crystal Lake Apartments</option>
+                        </select>
+                    </p>
+                    <p class="flex-row">
+                        <label for="issue-type">Issue Type</label>
+                        <select id="issue-type">
+                            <option>Reimbursement</option>
+                            <option>Plumbing</option>
+                            <option>Electrical</option>
+                            <option>Complaint</option>
+                            <option>Other Issue</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="description">Describe Your Issue:</label>
+                        <textarea class="text-input" id="description"
+                            placeholder="I have a plumbing emergency!"></textarea>
+                    </p>
                     <div>
-                    </div>
-                    <form target="textarea.formsReturn" method="POST" id="myForm">
-                        <h3>Please Enter Your Service Details</h3>
-                        <p>
-                            <label for="username">Name:</label>
-                            <input class="text-input" id="username" type="text" placeholder="First Last" />
-                        </p>
-                        <p>
-                            <label for="phone">Phone:</label>
-                            <input class="text-input" id="phone" type="number" placeholder="XXX-XXX-XXXX" />
-                        </p>
-                        <p>
-                            <label for="email">E-mail:</label>
-                            <input class="text-input" id="email" type="text" placeholder="me@example.com" />
-                        </p>
-                        <p class="flex-row">
-                            <label for="property">Property</label>
-                            <select id="property">
-                                <option>The Custom - Luxury Suites</option>
-                                <option>JW Lofts</option>
-                                <option>The Giancarlo</option>
-                                <option>Crystal Lake Apartments</option>
-                            </select>
-                        </p>
-                        <p class="flex-row">
-                            <label for="issue-type">Issue Type</label>
-                            <select id="issue-type">
-                                <option>Reimbursement</option>
-                                <option>Plumbing</option>
-                                <option>Electrical</option>
-                                <option>Complaint</option>
-                                <option>Other Issue</option>
-                            </select>
-                        </p>
-                        <p>
-                            <label for="description">Describe Your Issue:</label>
-                            <textarea class="text-input" id="description"
-                                placeholder="I have a plumbing emergency!"></textarea>
-                        </p>
+                        <label for="urgency" class="pContact"><strong>Is this an Emergancy?</strong></label>
+
+                        <div class="checkboxcontainer" id="emergencyanswers">
                         <div>
-                            <label for="urgency" class="pContact"><strong>Is this an Emergancy?</strong></label>
-                         
-                            <p class="flex-row" id="emergencyanswers">
-                                <div>
-                                <input class="checkbox" id="eYes" type="checkbox"/>
-                                <label for="emergency">Yes</label>
-                                </div>
-                                <p>
-                                </p>
-                               <div> <input class="checkbox" id="eNo" type="checkbox" />
-                                <label for="emergency">No</label>
-                               </div>
-                            </p>
+                            <input class="checkbox" id="eYes" type="checkbox" />
+                            <label for="emergency">Yes</label>
                         </div>
-                        <div>
-                            <label for="description" class="pContact"><strong>Contact Method</strong></label>
+                        <div> <input class="checkbox" id="eNo" type="checkbox" />
+                            <label for="emergency">No</label>
+                        </div>
+                    </div>
+                    </div>
+                    <div>
+                        <label for="description" class="pContact"><strong>Contact Method</strong></label>
+                        <div class="checkboxcontainer">
                             <p class="flex-row">
                                 <input class="checkbox" id="cPhone" type="checkbox" />
                                 <label for="method">Phone</label>
@@ -93,49 +94,53 @@
                                 <label for="method">Email</label>
                             </p>
                         </div>
-                        <p>
-                            <button type='submit' id="button">Submit</button>
-                        </p>
-                    </form>
-                    <!-- https://jsfiddle.net/appelgran/asxu1dk8/-->
-                    <textarea id="formsReturn">
+                    </div>
+                    <p>
+                        <button type='submit' id="button">Submit</button>
+                    </p>
+                </form>
+                <!-- https://jsfiddle.net/appelgran/asxu1dk8/-->
+                <textarea id="formsReturn">
                         We will respond within 6 hours of form submission.
                     </textarea>
-                </article>
-            </section>
-    
-            <!-- COMMUNITY EVENTS -->
-            <article>
-    
             </article>
-        </main>
-        <footer class="bg-emerald-700 text-emerald-50">
-            <ul class="list-none flex flex-col md:flex-row">
-                <li class="tooltip-wrap">
-                    <div>Contact Us</div>
-                    <div class="tooltip-content">General: (093)-310-5555<br>info@tasproperty.com</div>
-                </li>
-                <li class="tooltip-wrap">
-                    <div>Properties</div>
-                    <div class="tooltip-content">The Custom - Luxury Suites<br>JW Lofts<br>The Giancarlo<br>Crystal Lake Apartments</div>
-                </li>
-                <li class="tooltip-wrap">
-                    <div>Rental Contact</div>
-                    <div class="tooltip-content">Payments: Zelle or<br>Check payable to TAS Property Management</div>
-                </li>
-                <li class="tooltip-wrap-2">
-                    <div>Hours</div>
-                    <div class="tooltip-content">M-F: 8:30AM - 5:00 PM<br> S,S: 10:00 AM - 4:30 PM</div>
-                </li>
-            </ul>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function () {
-                $("#nav").load("./assets/navbar.html")
-            });
-        </script>
-        <script src="./assets/script.js"></script>
-        <script src="./assets/script1.js"></script>
-    </body>
+        </section>
+
+        <!-- COMMUNITY EVENTS -->
+        <article>
+
+        </article>
+    </main>
+    <footer class="bg-emerald-700 text-emerald-50">
+        <ul class="list-none flex flex-col md:flex-row">
+            <li class="tooltip-wrap">
+                <div>Contact Us</div>
+                <div class="tooltip-content">General: (093)-310-5555<br>info@tasproperty.com</div>
+            </li>
+            <li class="tooltip-wrap">
+                <div>Properties</div>
+                <div class="tooltip-content">The Custom - Luxury Suites<br>JW Lofts<br>The Giancarlo<br>Crystal Lake
+                    Apartments</div>
+            </li>
+            <li class="tooltip-wrap">
+                <div>Rental Contact</div>
+                <div class="tooltip-content">Payments: Zelle or<br>Check payable to TAS Property Management</div>
+            </li>
+            <li class="tooltip-wrap-2">
+                <div>Hours</div>
+                <div class="tooltip-content">M-F: 8:30AM - 5:00 PM<br> S,S: 10:00 AM - 4:30 PM</div>
+            </li>
+        </ul>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#nav").load("./assets/navbar.html")
+        });
+    </script>
+    <script src="./assets/script.js"></script>
+    <script src="./assets/script1.js"></script>
+</body>
+
 </html>

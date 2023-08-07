@@ -90,14 +90,15 @@ footer ul {
 main {
     color: var(--darkest);
 }
-/*
+
 article {
-    background-color: var(--darker);
-    margin: 15px;
-    display: flex;
-    justify-content: space-around;
+  width: 90% !important;
+  margin-right: 5% !important;
+  margin-left: 5% !important;
+}
+   
     
-}*/
+
 /*homepage section stylings*/
 
 .testimonial {
@@ -162,7 +163,7 @@ button {
 #title {
     margin-bottom: 2%;
     margin-top: 2%;
-    background-color: var(--light);
+    background-color: rgb(49, 49, 159);
     color: white;
     font-style: oblique;
     font-size: larger;
@@ -173,13 +174,15 @@ button {
     padding-bottom: 1%;
         margin-left: 15% !important;
         margin-right: 5% !important;
+        border-radius: 8px;
 
   }
   .container {
-    width: 100% !important;
-    margin-right: 0 !important;
+    width: 90% !important;
     display: inline-flexbox;
     padding: 0 !important;
+    margin-left: 5% !important;
+    margin-right: 5% !important;
 
   }
 
@@ -268,8 +271,9 @@ color: var(--darker) !important;
   #title {
   margin-bottom: 0;
   margin-top: 2%;
-  margin-left: 0% !important;
-  margin-right: 4% !important;
+  width: 90% !important;
+  margin-left: 5% !important;
+  margin-right: 5% !important;
   }
 
   .tooltip-wrap-2 .tooltip-content {
