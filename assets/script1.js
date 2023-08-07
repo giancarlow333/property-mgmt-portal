@@ -6,25 +6,8 @@ var apiMC = "md-NbUjRtqyFGcJ8YTmbRAu7A";
 var baseURL = "https://customsearch.googleapis.com/customsearch/v1?";
 
 
-
-//testing API
-//fetch ("https://mandrillapp.com/api/1.0/users/ping"), {
-//method:"POST"
-//header: 'Content-Type: application/json' 
-//data-raw: '{ "key": "YOUR_API_KEY" }'}
-
-
 var responseLog = document.querySelector("#formsReturn").value 
 responseLog = "We respond to submissions within 6 hours"
-
-//formData = new FormData(form);
-//checking formData function
-//console.log(formData)
-
-//form.addEventListener('submit', async (event) => {
- // event.preventDefault();})
-
-//console.log("stop default")
 
 
 //function SendGrid () {
@@ -117,7 +100,7 @@ localStorage.setItem("description", inputDescription.value);
     else if (issueType == "Other Issue") {
         emailSubject = "Tenant Issue"; };
 
-        document.querySelector("#formsReturn").value = "(Email Sent) "+ " name:" + inputName.value + "  phone: " + inputPhone + "   email: " + inputEmail + "  issue-type: " + issueType + "  description:" + inputDescription;
+        document.querySelector("#formsReturn").value = "(Email Sent) "+ " name:" + inputName + "  phone: " + inputPhone + "   email: " + inputEmail + "  issue-type: " + issueType + "  description:  " + inputDescription;
 
         console.log("button pressed")
         console.log(emailSubject)
@@ -126,39 +109,22 @@ localStorage.setItem("description", inputDescription.value);
     console.log("button listening")
   })
 
-  //alt using FormData to stringify form output??
-//document.querySelector('button').addEventListener("click", function (event) {
-  //event.preventDefault();
-  //console.log("button heard")
-//
-	//var ajax = new XMLHttpRequest();
 
- // console.log(ajax.responseText)
+  const form = document.querySelector('form');
 
- // var myForm = $("#form")[0]
-  // new FormData(myForm)
+function logForm(event) {
+  event.preventDefault();
 
- // console.log("adding alternate forms path")
-	
-//	ajax.onload = function() {
-	//	document.querySelector("#formsReturn").value = "(Success1)" + ajax.responseText;
-//	};
-	
-	//ajax.onerror = function() {
-	//	document.querySelector("#formsReturn").value = "(Error)" + ajax.responseText;
-	//};
+  const data = new FormData(form);
 
-  //ajax.open("post", document.querySelector("#formsReturn").value = "(Success2)" + ajax.responseText, true);
+  const formValues = data.get('email');
 
- // ajax.send(new FormData(myForm));
+  console.log(formValues);
+  console.log("form")
+}
 
- // console.log (document.querySelector("#formsReturn").value)
- // console.log(new FormData(myForm));
-//});
+form.addEventListener('click', logForm);
 
-// JS email send option
-
-//var submitB = getElementbyID("button")
 
 //
 //

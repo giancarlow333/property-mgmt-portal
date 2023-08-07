@@ -1,100 +1,115 @@
 /* Color scheme - Linked to Repair/Reinbursement Page */
 
 .header-img {
-    background-image: url(./image7.png);
-    height: 250px;
-    width: 100%;
-    margin-bottom: 30px;
-    margin-top: 15px;
-    background-size: cover;
-    background-position: center;
+  background-image: url(./image7.png);
+  height: 250px;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  background-size: cover;
+  background-position: center;
 }
 
 .header {
-    justify-content: center;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin: auto;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10% !important;
+  margin-right: 10% !important;
+  width: 80% !important;
 }
 
 form {
-margin: 15px;
-align-items: center;
-justify-content: center;
-max-width: 400px;
-border: 5px solid #000;
-padding: 15px;
-margin: auto;
+  margin: 15px;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  border: 5px solid #000;
+  padding: 15px;
+  margin: auto;
 }
 
-input, select, option, optgroup, textarea, button,
-pre, code {
+input,
+select,
+option,
+optgroup,
+textarea,
+button,
+pre,
+code {
   font-size: 100%;
   font-family: inherit;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 
 }
 
+form h3 {
+  font-size: 150%;
+}
 
-  .header {
-    display: flex;
-    justify-content: center;
-  }
+form p {
+  margin: 3% 0;
+}
 
-  form h3 {
-    font-size: 150%;
-  }
-  
-  form p {
-    margin: 3% 0;
-  }
+label {
+  display: block;
+}
 
-  label {
-    display: block;
-  }
-  
-  button {
-    padding: 1% 2%;
-    color: #fff;
-    background-color: #13293d;
-    border: 3px outset var(--base-color);
-    outline: none;
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    border-radius: 10px;
-  }
-  
-  /* What does this CSS rule do? do not want webrowser to apply extra elements*/
-  electelect {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    background-image: url("../images/arrow.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
-  }
-  
-  .text-input {
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  .text-input, select {
-    padding: 1%;
-    outline: none;
-    border: 1.2px solid #b9C6ae;
-  }
+.checkboxcontainer {
+  display: inline-flex !important;
+  justify-content: cover !important;
+  flex-flow: row;
+}
 
-    .body {
-      text-align: center;
-      display:flexbox
-    }
+.checkbox {
+  display: inline-block;
+  width: 30% !important;
+  padding-right: 10px !important;
+  margin-right: 110px !important;
+
+}
+
+#formsReturn {
+  display: flex;
+  margin-left: 20% !important;
+  margin-right: 20% !important;
+  margin-top: 7% !important;
+  margin-bottom: 7% !important;
+  width: 60%;
+}
+
+button {
+  padding: 1% 2%;
+  color: #fff;
+  background-color: #13293d;
+  border: 3px outset var(--base-color);
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.text-input {
+  width: 100%;
+  max-width: 100%;
+}
+
+.text-input,
+select {
+  padding: 1%;
+  outline: none;
+  border: 1.2px solid #b9C6ae;
+}
+
+.body {
+  text-align: center;
+  display: flexbox
+}
 
 #emergencyanswers {
   display: flex;
@@ -112,7 +127,7 @@ ol, ul {
   color: white;
   font-style: oblique;
   font-size: larger;
-  display: inline-flex!important;
+  display: inline-flex !important;
   margin-right: auto !important;
   padding-left: 7% !important;
   padding-right: 7% !important;
