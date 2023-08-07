@@ -4,9 +4,7 @@
 
 var apiMC = "md-NbUjRtqyFGcJ8YTmbRAu7A";
 var baseURL = "https://customsearch.googleapis.com/customsearch/v1?";
-var searchLocation;
-var searchTerm;
-var requestURL;
+
 
 
 //testing API
@@ -14,37 +12,19 @@ var requestURL;
 //method:"POST"
 //header: 'Content-Type: application/json' 
 //data-raw: '{ "key": "YOUR_API_KEY" }'}
-var inputEmail= document.getElementById("email");
-localStorage.setItem("email", inputEmail.value);
 
-var inputName= document.getElementById("username");
-localStorage.setItem("email", inputName.value);
 
-var inputPhone= document.getElementById("phone");
-localStorage.setItem("email", inputPhone.value);
+var responseLog = document.querySelector("#formsReturn").value 
+responseLog = "We respond to submissions within 6 hours"
 
-var inputProperty= document.getElementById("property");
-localStorage.setItem("email", inputProperty.value);
-
-var inputIssueType= document.getElementById("issue-type");
-localStorage.setItem("email", inputIssueType.value);
-
-var inputDescription= document.getElementById("description");
-localStorage.setItem("email", inputDescription.value);
-
-var inputDescription= document.getElementById("description");
-localStorage.setItem("email", inputEmail.value);
-
-const form = document.getElementById("myForm");
-
-formData = new FormData(form);
+//formData = new FormData(form);
 //checking formData function
-console.log(formData)
+//console.log(formData)
 
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();})
+//form.addEventListener('submit', async (event) => {
+ // event.preventDefault();})
 
-console.log("stop default")
+//console.log("stop default")
 
 
 //function SendGrid () {
@@ -54,6 +34,7 @@ console.log("stop default")
 //UserName = "apikey"
 //Password = "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"
 //}
+
 
 //testing API
 function TestAPI () {
@@ -88,11 +69,11 @@ function TestAPI () {
         }
       })
       .then((response) => response.json())
-      .then((json) => console.log(json))}
+      .then((json) => console.log(json))
+    }
 
       // to add into text once a text email sends:
       //"name:+ inputName + "  phone: " + inputPhone + "   email: " + inputEmail + "  issue-type: " + inputIssueType + "  description:" + inputDescription
-
 
 // Run script when button is clicked
 $(function () {
@@ -105,10 +86,22 @@ $(function () {
 
     Email()
 
-    var emailID = $("#email").val();
+    var inputEmail = $("#email").val();
+
+var inputName= $("#username").val();
+
+var inputPhone= $("#phone").val();
+
+var inputProperty= $("#property").val();
+localStorage.setItem("property", inputProperty.value);
+
+var inputDescription= $("#description").val();
+localStorage.setItem("description", inputDescription.value);
+
+    // set issue type based on selection
     var issueType = $("#issue-type").find(":selected").val();
 
-    // set search location based on selection
+
     if (issueType == "Reimbursement") {
       emailSubject = "Reimbursement Request";
     }
@@ -124,10 +117,11 @@ $(function () {
     else if (issueType == "Other Issue") {
         emailSubject = "Tenant Issue"; };
 
+        document.querySelector("#formsReturn").value = "(Email Sent) "+ " name:" + inputName.value + "  phone: " + inputPhone + "   email: " + inputEmail + "  issue-type: " + issueType + "  description:" + inputDescription;
+
         console.log("button pressed")
         console.log(emailSubject)
-        console.log(emailID)
-
+        console.log(inputEmail)
     })
     console.log("button listening")
   })
@@ -183,7 +177,8 @@ $(function () {
   //message => alert(message)
 //);
 
-form.addEventListener("click", Email.send)
+//form.addEventListener("click", Email.send)
+
 
 
 // https://stackoverflow.com/questions/25515936/perform-curl-request-in-javascript
